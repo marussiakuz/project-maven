@@ -19,5 +19,3 @@ target/
 .repository/
 *.iml
 *.iws
-
--DgroupId=
