@@ -89,18 +89,18 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
+                    <outputDirectory>${user.home}/temp</outputDirectory>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <classpathPrefix>libs/</classpathPrefix>
                             <mainClass>
                                 org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
                             </mainClass>
                         </manifest>
-                            <manifestEntries>
-                                <Rsrc-Main-Class>com.javarush.games.racer.RacerGame</Rsrc-Main-Class>
-                                <Class-Path>./</Class-Path>
-                            </manifestEntries>
+                        <manifestEntries>
+                            <Rsrc-Main-Class>com.javarush.games.racer.RacerGame</Rsrc-Main-Class>
+                            <Class-Path>./</Class-Path>
+                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
@@ -138,7 +138,8 @@
 
         <resources>
                 <resource>
-                        <directory>${project.build.directory}/libs</directory>
+                    <directory>${project.build.directory}/libs</directory>
+                    <targetPath>${project.build.outputDirectory}/lib</targetPath>
                 </resource>
         </resources>
     </build>
